@@ -1,0 +1,10 @@
+version: '3'
+services:
+  webserver:
+    container_name: node-webpack
+    build: node
+    tty: true
+    volumes:
+      - ./app:/app
+    ports:
+      - "8080:3000"
