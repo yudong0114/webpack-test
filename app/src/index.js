@@ -1,5 +1,9 @@
 // hello.jsのインポート
 import { hello, goodnight} from "./hello";
+// index.cssのインポート
+import './index.css';
+// button.cssのインポート
+import './button.css';
 
 // helloボタン
 const hello_btn = document.getElementById('hello');
@@ -10,7 +14,7 @@ const goodnight_btn = document.getElementById('goodnight');
 hello_btn.addEventListener('click', () => {
   hello('山田 勝己');
 });
-// hellowボタンにリスナーの設定
+// helloボタンにリスナーの設定
 goodnight_btn.addEventListener('click', () => {
   goodnight('山田 勝己', 21);
 });
