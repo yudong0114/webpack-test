@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   // バンドルの構築を開始する場所
@@ -24,5 +25,9 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+    // HTML生成するプラグイン
+    new HtmlWebpackPlugin({template: './src/index.html'})
+  ]
 };

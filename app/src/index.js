@@ -1,8 +1,16 @@
 // hello.jsのインポート
-import { hello, goodNight} from "./hello";
+import { hello, goodnight} from "./hello";
 
-// hello関数の実行
-hello('山田 勝己');
+// helloボタン
+const hello_btn = document.getElementById('hello');
+// goodnightボタン
+const goodnight_btn = document.getElementById('goodnight');
 
-// goodNight関数の実行
-goodNight('長野 誠', 21);
+// helloボタンにリスナーの設定
+hello_btn.addEventListener('click', () => {
+  hello('山田 勝己');
+});
+// hellowボタンにリスナーの設定
+goodnight_btn.addEventListener('click', () => {
+  goodnight('山田 勝己', 21);
+});

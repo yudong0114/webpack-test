@@ -4,6 +4,6 @@ export let hello = (name) => {
 }
 
 // goodnight関数をexport
-export let goodNight = (name, sleep_time) => {
+export let goodnight = (name, sleep_time) => {
   alert(`${sleep_time}時です、${name}さん、おやすみ！！`);
 }
