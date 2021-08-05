@@ -1,4 +1,9 @@
 // hello関数をexport
-export function hello(name) {
-  alert(name + "さん、こんにちは！");
+export let hello = (name) => {
+  alert(`${name}さん、こんにちは！`);
+}
+
+// goodnight関数をexport
+export let goodNight = (name, sleep_time) => {
+  alert(`${sleep_time}時です、${name}さん、おやすみ！！`);
 }

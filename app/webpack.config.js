@@ -10,4 +10,19 @@ module.exports = {
   },
   // ファイル変更の検知の有効化
   watch: true,
+  // babelの使用(ES6 -> ES5)
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      }
+    ]
+  }
 };
