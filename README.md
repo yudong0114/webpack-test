@@ -16,3 +16,5 @@ $ docker exec -it コンテナID /bin/bash
   https://www.expexp.jp/webpack/
 * webpackでEJSをコンパイルする方法  
   https://haniwaman.com/webpack-ejs/
+* html-webpack-pluginで出力したHTMLにおいて、個別の外部JS・外部CSSを読み込む方法  
+  https://teratail.com/questions/238214

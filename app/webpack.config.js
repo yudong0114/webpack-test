@@ -9,6 +9,7 @@ module.exports = {
     index: './src/index.js',
     about: './src/about.js',
     'index.css': './src/index.css',
+    'button.css': './src/button.css',
     'about.css': './src/about.css',
   },
   // バンドルしたファイルのエクスポート先
@@ -74,6 +75,7 @@ module.exports = {
       chunks: [
         'index',
         'index.css',
+        'button.css',
       ],
     }),
     // HTML生成するプラグイン(About)
