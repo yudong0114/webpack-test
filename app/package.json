@@ -11,7 +11,8 @@
     "mini-css-extract-plugin": "^2.2.0",
     "style-loader": "^3.2.1",
     "webpack": "^5.47.1",
-    "webpack-cli": "^4.7.2"
+    "webpack-cli": "^4.7.2",
+    "webpack-fix-style-only-entries": "^0.6.1"
   },
   "name": "app",
   "version": "1.0.0",

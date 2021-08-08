@@ -1,16 +1,20 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 
 module.exports = {
   // バンドルの構築を開始する場所
   entry: {
-    'index.js': './src/index.js',
+    index: './src/index.js',
+    about: './src/about.js',
+    'index.css': './src/index.css',
+    'about.css': './src/about.css',
   },
   // バンドルしたファイルのエクスポート先
   output: {
-    filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
+    filename: '[name].js',
   },
   // ファイル変更の検知の有効化
   watch: true,
@@ -58,7 +62,7 @@ module.exports = {
     ]
   },
   plugins: [
-    // HTML生成するプラグイン
+    // HTML生成するプラグイン(top)
     new HtmlWebpackPlugin({
       // 書き出すHTML
       filename: 'index.html',
@@ -68,12 +72,31 @@ module.exports = {
 			minify: false,
       // 読み込むファイル
       chunks: [
-        'index.js',
+        'index',
+        'index.css',
       ],
+    }),
+    // HTML生成するプラグイン(About)
+    new HtmlWebpackPlugin({
+      // 書き出すHTML
+      filename: 'about.html',
+      // 指定するEJS
+			template : './src/about.ejs',
+      // minifyは行わない
+			minify: false,
+      // 読み込むファイル
+      chunks: [
+        'about',
+        'about.css',
+      ],
+    }),
+    // エントリー記載の.css.jsファイルが生成されないようにするプラグイン
+    new FixStyleOnlyEntriesPlugin({
+      extensions: ['scss', 'css']
     }),
     // CSSを別ファイルで出力するプラグイン
     new MiniCssExtractPlugin({
-      filename: 'index.css'
-    })
+      filename: './[name]',
+    }),
   ]
 };

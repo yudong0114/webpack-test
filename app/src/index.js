@@ -1,9 +1,5 @@
 // hello.jsのインポート
 import { hello, goodnight} from "./hello";
-// index.cssのインポート
-import './index.css';
-// button.cssのインポート
-import './button.css';
 
 // helloボタン
 const hello_btn = document.getElementById('hello');
