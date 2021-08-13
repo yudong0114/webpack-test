@@ -8,9 +8,10 @@ module.exports = {
   entry: {
     index: './src/index.js',
     about: './src/about.js',
-    'index.css': './src/index.css',
-    'button.css': './src/button.css',
-    'about.css': './src/about.css',
+    'common.css': './src/common.scss',
+    'index.css': './src/index.scss',
+    'button.css': './src/button.scss',
+    'about.css': './src/about.scss',
   },
   // バンドルしたファイルのエクスポート先
   output: {
@@ -32,9 +33,9 @@ module.exports = {
           }
         }
       },
-      // cssの使用
+      // scssの使用
       {
-        test: /\.css/,
+        test: /\.scss/,
         use: [
           MiniCssExtractPlugin.loader,
           { 
@@ -42,6 +43,9 @@ module.exports = {
             options: {
               url: false,
             }
+          },
+          {
+            loader: 'sass-loader',
           },
         ],
       },
@@ -74,6 +78,7 @@ module.exports = {
       // 読み込むファイル
       chunks: [
         'index',
+        'common.css',
         'index.css',
         'button.css',
       ],
@@ -89,6 +94,7 @@ module.exports = {
       // 読み込むファイル
       chunks: [
         'about',
+        'common.css',
         'about.css',
       ],
     }),
